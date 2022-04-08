@@ -980,25 +980,25 @@ class OptionCheckbox (OptionChangePanel):
 
 class OptionAutoclose (OptionCheckbox):
    def __init__(self, parent, pos, optionsMenu, config):
-      OptionCheckbox.__init__(self, parent, pos, optionsMenu, config, 'Autoclose Noita :', 'autoclose')
+      OptionCheckbox.__init__(self, parent, pos, optionsMenu, config, '自动关闭 Noita :', 'autoclose')
 
 class OptionLoadLaunch (OptionCheckbox):
    def __init__(self, parent, pos, optionsMenu, config):
-      OptionCheckbox.__init__(self, parent, pos, optionsMenu, config, 'Launch Noita on load :', 'launch_on_load')
+      OptionCheckbox.__init__(self, parent, pos, optionsMenu, config, '启动Noita时加载 :', 'launch_on_load')
       self.Raise()
 
 class OptionUseSteamLaunch (OptionCheckbox):
    def __init__(self, parent, pos, optionsMenu, config):
-      OptionCheckbox.__init__(self, parent, pos, optionsMenu, config, 'Use Steam launch :', 'use_steam_launch')
+      OptionCheckbox.__init__(self, parent, pos, optionsMenu, config, '使用steam打开 :', 'use_steam_launch')
 
 class OptionDisplayStatus (OptionCheckbox):
    def __init__(self, parent, pos, optionsMenu, config):
-      OptionCheckbox.__init__(self, parent, pos, optionsMenu, config, 'Show save info :', 'display_save_status')
+      OptionCheckbox.__init__(self, parent, pos, optionsMenu, config, '显示保存信息 :', 'display_save_status')
       self.Raise()
 
 class FolderSelectSetting (OptionChangePanel):
    def __init__(self, parent, pos, optionsMenu, config):
-      OptionChangePanel.__init__(self, parent, label = "Path to save folder :", pos = pos, align = wx.ALIGN_LEFT, config = config)
+      OptionChangePanel.__init__(self, parent, label = "存档地点 :", pos = pos, align = wx.ALIGN_LEFT, config = config)
       self.optionsMenu = optionsMenu
       self.setValue()
 
@@ -1060,7 +1060,7 @@ class NoitaExeSelectSetting (OptionExecutableSelect):
          pos,
          optionsMenu,
          config,
-         'Path to executable :',
+         '执行文件路径 :',
          'executable_path',
          'Select Noita executable')
 
@@ -1072,7 +1072,7 @@ class SteamExeSelectSetting (OptionExecutableSelect):
          pos,
          optionsMenu,
          config,
-         'Path to steam :',
+         'steam 路径 :',
          'steam_launch',
          'Select Steam executable')
 
@@ -1181,16 +1181,16 @@ class OptionsMenu (wx.Panel):
          FolderSelectSetting(contentPanel, (15, 15), self , self.config)
       )
       self.options.append(
-         BindingSetting(contentPanel, (15, 80), self, 'hotkey_save', 'Save hotkey :', self.config)
+         BindingSetting(contentPanel, (15, 80), self, 'hotkey_save', '保存热键 :', self.config)
       )
       self.options.append(
-         BindingSetting(contentPanel, (15, 145), self, 'hotkey_saveQuick', 'Quick save hotkey :', self.config)
+         BindingSetting(contentPanel, (15, 145), self, 'hotkey_saveQuick', '快速保存热键 :', self.config)
       )
       self.options.append(
-         BindingSetting(contentPanel, (15, 210), self, 'hotkey_load', 'Load hotkey :', self.config)
+         BindingSetting(contentPanel, (15, 210), self, 'hotkey_load', '加载热键 :', self.config)
       )
       self.options.append(
-         BindingSetting(contentPanel, (15, 275), self, 'hotkey_loadQuick', 'Quick load hotkey :', self.config)
+         BindingSetting(contentPanel, (15, 275), self, 'hotkey_loadQuick', '快速加载热键 :', self.config)
       )
       self.options.append(
          OptionAutoclose(contentPanel, (15, 340), self, self.config)
